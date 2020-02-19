@@ -182,7 +182,7 @@ Exemplo de código:
 
 Resultado:
 
-![WebView](.github/exemplo-web-view.png)
+![WebView](src/assets/exemplo-web-view.png)
 
 ## 📅 Entrega
 
