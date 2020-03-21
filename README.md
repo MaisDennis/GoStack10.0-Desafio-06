@@ -1,20 +1,30 @@
-### Conceitos abordados:
+# GoStack 10.0 || Desafio 06
+
+* [1. Conceitos abordados](#1-conceitos-abordados)
+* [2. Descrição do projeto](#2-descrição-do-projeto)
+* [3. Iniciando o React Native](#3-iniciando-o-react-native)
+* [4. Enunciado do Projeto](#4-enunciado-do-projeto)
+* [5. Criando o projeto](#5-criando-o-projeto)
+
+## 1. Conceitos abordados
+
 1. Loading e uso de componente ActivityIndicator (loading do React Native).
 2. Scroll infinito e uso das props:
    1. onEndReachedThreshold (Carrega mais itens quando chegar em 20% do fim).
    2. nEndReached={this.loadMore} (Funçao que carrega mais itens).
 3. Refresh
 4. WebView: browser inegrado de pagina externa.
-___
 
-### Desrição do projeto:
+
+## 2. Desrição do projeto
 
 Adicionando features ao projeto base.
 
 Projeto base: https://github.com/MaisDennis/GoStack10.0-Modulo-06
-___
 
-### Iniciando o React Native:
+<img src="https://github.com/MaisDennis/GoStack10.0-Desafio-06/blob/master/src/assets/Repo.png" alt="Repo" width="100%" height="auto">
+
+## 3. Iniciando o React Native:
 
 Esse projeto foi desenvolvido para o ambiente mobile.
 No desenvolvimento do projeto foi usado o emulador mobile: Genymotion.
@@ -39,60 +49,8 @@ Iniciar o app:
 yarn react-native run-android
 ```
 obs. O aplicativo foi desenvolvido para o ambiente Android.
-___
 
-### Criando o projeto:
-
-1. Loading de repositórios:
-   1. Adicionar loading: true, ao state.
-   2. Criar a função: load e separar load de componentDidMount().
-   3. User/styles.js
-      1. Criar o componente Loading = styled.ActivityIndicator.
-      2. color e size são atribuidos via attrs, pois a opção de cor e tamanho não está nas opções padrão do ActivityIndicator
-   4. Criar uma condicional loading com o componente Loading.
-
-2. Scroll infinito:
-   1. Adicionar as props:
-       ```html
-       <Stars
-        onEndReachedThreshold={0.2} // Carrega mais itens quando chegar em 20% do fim
-        onEndReached={this.loadMore} // Função que carrega mais itens
-        // Restante das props
-       >
-       ```
-   2. Adicionar page: 1, ao state.
-   3. Criar a função: loadMore.
-   4. Adicionar params: { page } ao api.get.
-
-3. Pull to Refresh:
-   1. Adicionar refreshing: false, ao state.
-   2. Adicionar a prop:
-       ```html
-       <Stars
-        onRefresh={this.refreshList} // Função dispara quando o usuário arrasta a lista pra baixo
-        refreshing={this.state.refreshing} // Variável que armazena um estado true/false que representa se a lista está atualizando
-        // Restante das props
-       >
-       ```
-   3. Criar a função refreshList
-   4. Adicionar ao load: this.setState({ refreshing: false }),
-
-4. WebView
-   1. Guideline: https://github.com/react-native-community/react-native-webview/blob/master/docs/Getting-Started.md
-   2. Add React Native Webview
-      ```
-      yarn add react-native-webview
-      ```
-   3. Criar Repository/index.js
-      1. import WebView e criar o component com source.
-   4. User/index.js
-      1. Criar a função handleNavigate.
-      2. adicionar a prop onPress={this.handleNavigate(item)}.
-         1. item contem todos os params, inclusive html_url que será usado em Repository.index.js
-         2. Lembrar que em User/styles.js, tem que transformar o Starred em RectButton (para usar o navigate).
-___
-
-### Enunciado do projeto:
+## 4. Enunciado do projeto:
 
 Link: https://github.com/Rocketseat/bootcamp-gostack-desafio-06/blob/master/README.md
 
@@ -195,3 +153,54 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 ---
 
 Feito com ♥ by Rocketseat :wave: [Entre na nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
+
+
+## 5. Criando o projeto:
+
+1. Loading de repositórios:
+   1. Adicionar loading: true, ao state.
+   2. Criar a função: load e separar load de componentDidMount().
+   3. User/styles.js
+      1. Criar o componente Loading = styled.ActivityIndicator.
+      2. color e size são atribuidos via attrs, pois a opção de cor e tamanho não está nas opções padrão do ActivityIndicator
+   4. Criar uma condicional loading com o componente Loading.
+
+2. Scroll infinito:
+   1. Adicionar as props:
+       ```html
+       <Stars
+        onEndReachedThreshold={0.2} // Carrega mais itens quando chegar em 20% do fim
+        onEndReached={this.loadMore} // Função que carrega mais itens
+        // Restante das props
+       >
+       ```
+   2. Adicionar page: 1, ao state.
+   3. Criar a função: loadMore.
+   4. Adicionar params: { page } ao api.get.
+
+3. Pull to Refresh:
+   1. Adicionar refreshing: false, ao state.
+   2. Adicionar a prop:
+       ```html
+       <Stars
+        onRefresh={this.refreshList} // Função dispara quando o usuário arrasta a lista pra baixo
+        refreshing={this.state.refreshing} // Variável que armazena um estado true/false que representa se a lista está atualizando
+        // Restante das props
+       >
+       ```
+   3. Criar a função refreshList
+   4. Adicionar ao load: this.setState({ refreshing: false }),
+
+4. WebView
+   1. Guideline: https://github.com/react-native-community/react-native-webview/blob/master/docs/Getting-Started.md
+   2. Add React Native Webview
+      ```
+      yarn add react-native-webview
+      ```
+   3. Criar Repository/index.js
+      1. import WebView e criar o component com source.
+   4. User/index.js
+      1. Criar a função handleNavigate.
+      2. adicionar a prop onPress={this.handleNavigate(item)}.
+         1. item contem todos os params, inclusive html_url que será usado em Repository.index.js
+         2. Lembrar que em User/styles.js, tem que transformar o Starred em RectButton (para usar o navigate).
