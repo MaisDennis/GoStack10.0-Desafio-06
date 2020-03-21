@@ -16,7 +16,7 @@
 4. WebView: browser inegrado de pagina externa.
 
 
-## 2. Desrição do projeto
+## 2. Descrição do projeto
 
 Adicionando features ao projeto base.
 
